@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Javascript Quiz :</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src='script.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+
+
+
+    
+    <style>
+
+    *{
+        margin: 0!important;
+        padding: 0px;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: "Oswald", sans-serif;
+    }
+    .main_section{
+        padding: 0px!important;
+    }
+    .noPadding{
+        padding: 0px!important;
+    }
+    
+    .TC{
+        color: #fff;
+        background: url("bg5.jpg");
+        background-repeat: repeat-x;
+        background-attachment:local;
+        background-position:0% 0%;
+        background-size:100% 100%;
+        padding: 20px 20px!important;
+        background-color: #000!important;
+            text-align: -webkit-center;
+    }
+    
+    .jumbotron h2, .jumbotron p{
+        margin: 10px!important;
+        text-shadow: 1px 1px 2px white;
+    }
+    
+    .jumbotron div{
+        padding: 10px!important;
+    }
+    
+    .jumbotron ol li{
+        margin: 20px 0px!important;
+    }
+    
+    .jumbotron ol{
+        padding: 10px 20px!important;
+            text-align: left;
+    margin: 0 auto;
+    width: 50%;
+    margin: 0px auto!important;
+    list-style-image: url(smile.svg);
+        list-style-position: inside;
+    }
+    
+    .jumbotron span{
+        display: block;
+
+    }
+    
+    .main_section{
+        background: var(--danger);
+    }
+    
+    .wrapTheText{
+       /* background: rgba(31, 31, 32, 0.4);*/
+        width: 80%;
+        text-align: center;
+        color: #fff;
+        font-family: inherit;
+        font-size: 1.5em;
+    }
+    
+    .wrapTheText span{
+        padding-top: 20px;
+    }
+    
+    #questionsWrap{
+        width: 100%;
+        background:radial-gradient(circle, #41cac0,  #2f7dab);
+        background-size: 100% 100%;
+    }
+    
+    .quizForm{
+        width: 100%;
+    }
+    
+    #questionsWrap .jumbotron{
+        width: 80%!important;
+        margin: 0 auto!important;
+        position: relative;
+        top: 10px;
+        font-family: inherit;
+    }
+    
+    #questionsWrap .jumbotron .optionsWrap input{
+        width: 20px;
+        display: inline;
+    }
+    
+    #questionsWrap .jumbotron .options span{
+        display: inline-block;
+        width: 150px;
+    }
+    
+    .options{
+        width: 60%;
+        display: inline-block!important;
+        font-size: 20px;
+    }
+    
+    .easyPaginateNav{
+        text-align: center;
+        width: 60%!important;
+        margin: 0 auto!important;
+    }
+    
+    .optionsContainer{
+        margin: 10px 0px!important;
+    }
+    
+    #submit{
+        display: block!important;
+        visibility: visible!important;
+    }
+        
+        .fa-question{
+            color: #fff!important;
+            font-size: 200px!important;
+            display: inline-block;
+            position: absolute;
+            right: 10%;
+            top: 60%;
+        }
+        
+        header{
+            height: 200px;
+            background: radial-gradient(circle, #41cac0,  #2f7dab);
+        }
+        
+        .mainHeading{
+            margin: 80px 0px!important;
+            font-family: inherit;
+            font-size: 4em!important;
+            font-weight: 900!important;
+        }
+        
+        .jumbotron #question{
+            margin: 0px 0px 20px 0px!important;
+        }
+        
+        .jumbotron .main_options{
+            font-size: 1.5em!important;
+            font-family: inherit;
+            
+        }
+        
+        .optionsWrapA label, .optionsWrapB label{
+            padding-right: 100px;
+            margin-right: 50px!important;
+        }
+        
+        .jumbotron .main_options label{
+            color: #000!important;
+              font-size: 1em!important;
+            font-family: inherit;
+            font-weight: 400;
+        }
+        
+        .submit_Btn{
+            text-align: center;
+            margin: 0 auto!important;
+            width: 200px;
+        }
+        
+        #result{
+            width: 80%;
+            padding: 20px;
+            margin: 20px auto!important;
+            font-size: 2em;
+            display: none;
+        }
+    
+    </style>
+    
+    
+</head>
+<body>
+   
+   
+<section class="container-fluid main_section">
+
+    <header class='row headerArea'>
+       <section class='col-sm-12 mainHeading'>
+        <h1 class='text-center'>Web Development Quiz <span class='lead'>By MM Nauman</span></h1>
+        </section>
+    </header>
+    
+    <section class="TC jumbotron bg-dark text-white noPadding">
+        
+        <h2 class='text-center'>HOW TO PLAY?:</h2>
+        
+      <i class="fas fa-question"></i>
+        
+        <div class='text-success lead wrapTheText'>
+        <span>This Quiz Bot asks 20 Questions on Frontend Web Developent. The Questions will be fetched from the Json File. The Topics are JavaScript, CSS & HTML5</span>
+        <ol>
+            <li>You Will Get 4 options to guess the right one.</li>
+            <li>If your answer is right your score will be increase by one.</li>
+            <li>You cannot leave any question.</li>
+            <li>One question will display at a time to go to next click on the Second page.</li>
+        </ol>
+        </div>
+    </section>
+
+ <section class="row" id='questionsWrap'>
+        
+            
+            <div class="alert alert-success" id='result'>
+</div>
+            
+        
+        <section class="quizForm">
+            
+            <form action="" name='myForm1' id='easyPaginate'>
+                
+                <input type="submit" class='btn btn-lg btn-success submit_Btn' value='submit' id='submit' name='submit'>
+            </form> 
+            
+            
+              <div class="container">
+   <div class="text-center">
+      <ul class="pagination pagination-lg">
+         
+
+      </ul>
+   </div>
+</div>   
+      </section>
+   </section> 
+
+
+</section>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>
