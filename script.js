@@ -10,7 +10,7 @@ function appendEl(name, appendEl){
 
 // Url To Fetch
 
-const url = "https://cdn.rawgit.com/mmnauman/html5/e1154708/quiz.json";
+const url = "https://cdn.rawgit.com/mmnauman/html5/7172c0a6/quiz.json";
 
 fetch(url).
     then((res)=> res.json()).
