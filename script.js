@@ -67,7 +67,7 @@ $("#easyPaginate").on("submit", function(e){
             alert(`You missed question ${i+1}`);
             return false;
         }else{
-            document.getElementById("submit").disabled = true;
+            document.getElementById("submit").setAttribute('disabled')
         }
             
       //console.log(document.forms[0][`q${String(i)}`].value);      
